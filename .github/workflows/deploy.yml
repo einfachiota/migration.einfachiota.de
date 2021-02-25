@@ -18,10 +18,11 @@ jobs:
           mdbook-version: 'latest'
 
       - run: mdbook build
-
+      
       - name: Deploy
         uses: iotaledger/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./book
+          cname: migration.einfachiota.de
